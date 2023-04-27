@@ -12,31 +12,31 @@ public class ControlPanel implements IControlPanel {
 	@Override
 	public void turnOnLight() {
 		
-		
+		smartHomeSystem.turnOnLight();
 	}
 
 	@Override
 	public void turnOffLight() {
-		// TODO Auto-generated method stub
 		
+		smartHomeSystem.turnOffLight();
 	}
 
 	@Override
 	public void lockDoor() {
-		// TODO Auto-generated method stub
 		
+		smartHomeSystem.lockDoor();	
 	}
 
 	@Override
 	public void unlockDoor() {
-		// TODO Auto-generated method stub
 		
+		smartHomeSystem.unlockDoor();
 	}
 
 	@Override
-	public void setTemprature(int temperature) {
-		// TODO Auto-generated method stub
+	public void setTemperature(int temperature) {
 		
+		smartHomeSystem.setTemperature(temperature);
 	}
 
 	

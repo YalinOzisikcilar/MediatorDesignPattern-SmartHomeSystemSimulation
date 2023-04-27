@@ -35,6 +35,10 @@ public class Thermostat extends Actuator{
 		
 		this.state = thermostatState;
 	}
+	public void setTemperature(int newTemperature) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 
 }

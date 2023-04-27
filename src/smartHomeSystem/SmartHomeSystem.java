@@ -92,6 +92,37 @@ public class SmartHomeSystem {
         actuators.put("thermostat", new Thermostat());
 		
 	}
+
+
+	public void turnOnLight() {
+		LightBulb lightBulb = (LightBulb) this.getActuator("lightBulb");
+		lightBulb.turnOn();
+		
+	}
+
+	public void turnOffLight() {
+		LightBulb lightBulb = (LightBulb) this.getActuator("lightBulb");
+		lightBulb.turnOff();
+	}
+
+	public void lockDoor() {
+		DoorLock doorLock = (DoorLock) this.getActuator("doorLock");
+		doorLock.lockDoor();
+		
+	}
+
+	public void unlockDoor() {
+		DoorLock doorLock = (DoorLock) this.getActuator("doorLock");
+		doorLock.unlockDoor();
+		
+	}
+
+	public void setTemperature(int temperature) {
+		Thermostat thermostat = (Thermostat) this.getActuator("thermostat");
+		thermostat.setTemperature(temperature);
+		
+	}
+	
 	private Sensor getSensor(String sensorName) {
         return sensors.get(sensorName);
     }

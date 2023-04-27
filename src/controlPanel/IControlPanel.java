@@ -5,5 +5,5 @@ public interface IControlPanel {
 	void turnOffLight();
 	void lockDoor();
 	void unlockDoor();
-	void setTemprature(int temperature);
+	void setTemperature(int temperature);
 }

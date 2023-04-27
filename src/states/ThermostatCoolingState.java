@@ -31,7 +31,7 @@ public class ThermostatCoolingState implements ThermostatState{
 	@Override
 	public String getThermostatStateDescription() {
 		// TODO Auto-generated method stub
-		return "Thermostat is closed.";
+		return "Thermostat is cooling.";
 	}
 
 	@Override

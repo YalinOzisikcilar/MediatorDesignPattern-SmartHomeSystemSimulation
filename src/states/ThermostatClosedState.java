@@ -33,6 +33,12 @@ public class ThermostatClosedState implements ThermostatState{
 		return "Thermostat is closed.";
 	}
 
+	@Override
+	public void fixTemperature(Thermostat thermostat) {
+		// do nothing thermostat is closed.
+		
+	}
+
 	
 
 }

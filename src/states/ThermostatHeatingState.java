@@ -34,6 +34,10 @@ public class ThermostatHeatingState  implements ThermostatState{
 		return "Thermostat is heating.";
 	}
 
-	
+	@Override
+	public void fixTemperature(Thermostat thermostat) { //increase the temperature by 1.
+		thermostat.setTemperature(thermostat.getTemperature() + 1);
+		
+	}
 
 }

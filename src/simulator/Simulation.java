@@ -23,6 +23,7 @@ public class Simulation {
 		while (System.currentTimeMillis() - startTime < 20000) {
 			smartHomeSystem.automateLight();
 			smartHomeSystem.automateDoorLock();
+			smartHomeSystem.automateTemperature();
 			System.out.println(smartHomeSystem.getSystemStateDescription());
 		    try {
 		        Thread.sleep(1000); // Sleep for 1 second

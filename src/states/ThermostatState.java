@@ -7,5 +7,6 @@ public interface ThermostatState {
 	void decreaseTemperature(Thermostat thermostat);
 	void closeThermostat(Thermostat thermostat);
 	String getThermostatStateDescription();
+	void fixTemperature(Thermostat thermostat);
 	
 }

@@ -6,39 +6,51 @@ import states.ThermostatState;
 
 public class Thermostat extends Actuator{
 	
-	private int temperature;
+	private int currentTemperature;
 	private ThermostatState state;
 	
 	public Thermostat() {
 		this.state = new ThermostatClosedState();  //initial state is closed.
 	}
-	public void decreaseTemperature() {
-		
+	public void decreaseTemperature(int currentTemperature) {
+		this.currentTemperature = currentTemperature;
 		state.decreaseTemperature(this);
+		this.fixTemperature();
 	}
 
-	public void increaseTemperature() {
-		
+	public void increaseTemperature(int currentTemperature) {
+		this.currentTemperature = currentTemperature;
 		state.increaseTemperature(this);
+		this.fixTemperature();
 	}
 	
-	public void closeThermostat() {
-		
+	public void closeThermostat(int currentTemperature) {
+		this.currentTemperature = currentTemperature;
 		state.closeThermostat(this);
+		this.fixTemperature();
 		
+	}
+	
+	public void fixTemperature() {
+		state.fixTemperature(this);
 	}
 
 	public String getStateDescription() {
 		
-		return state.getThermostatStateDescription();
+		return state.getThermostatStateDescription()+" Current temperature is " + currentTemperature;
 	}
 	public void setState(ThermostatState thermostatState) {
 		
 		this.state = thermostatState;
 	}
 	public void setTemperature(int newTemperature) {
-		// TODO Auto-generated method stub
 		
+		currentTemperature = newTemperature;
+		
+	}
+	public int getTemperature() {
+
+		return currentTemperature;
 	}
 	
 

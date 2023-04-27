@@ -34,6 +34,12 @@ public class ThermostatCoolingState implements ThermostatState{
 		return "Thermostat is closed.";
 	}
 
+	@Override
+	public void fixTemperature(Thermostat thermostat) { //decrease the temperature by 1.
+		thermostat.setTemperature(thermostat.getTemperature() - 1);
+		
+	}
+
 	
 
 }

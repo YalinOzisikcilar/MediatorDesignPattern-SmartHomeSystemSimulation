@@ -11,7 +11,7 @@ public class SmartHomeSystem {
 
 
 	public SmartHomeSystem() {
-
+		goalTemperature = 23;// default temperature is 23.
 	}
 	
 	public String getSystemStateDescription() { //get all actuators state description
@@ -45,13 +45,13 @@ public class SmartHomeSystem {
 		int currentTemperature = readTempSensor();
 		Thermostat thermostat = (Thermostat) actuators.get("thermostat");
 		if(currentTemperature > goalTemperature) {
-			thermostat.decreaseTemperature();
+			thermostat.decreaseTemperature(currentTemperature);
 		}
 		else if(currentTemperature < goalTemperature) {
-			thermostat.increaseTemperature();
+			thermostat.increaseTemperature(currentTemperature);
 		}
 		else {
-			thermostat.closeThermostat();
+			thermostat.closeThermostat(currentTemperature);
 		}
 	}
 	

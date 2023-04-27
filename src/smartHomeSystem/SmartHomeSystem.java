@@ -7,6 +7,7 @@ import controlPanel.IControlPanel;
 public class SmartHomeSystem {
 	private HashMap<String, Sensor> sensors;
 	private HashMap<String, Actuator> actuators;
+	private int goalTemperature;
 
 
 	public SmartHomeSystem() {
@@ -41,12 +42,12 @@ public class SmartHomeSystem {
 	}
 	
 	public void automateTemperature(){
-		Signal temperatureSignal = readTempSensor();
+		int currentTemperature = readTempSensor();
 		Thermostat thermostat = (Thermostat) actuators.get("thermostat");
-		if(temperatureSignal == Signal.HIGH) {
+		if(currentTemperature > goalTemperature) {
 			thermostat.decreaseTemperature();
 		}
-		else if(temperatureSignal == Signal.LOW) {
+		else if(currentTemperature < goalTemperature) {
 			thermostat.increaseTemperature();
 		}
 		else {
@@ -54,9 +55,9 @@ public class SmartHomeSystem {
 		}
 	}
 	
-	private Signal readTempSensor() {
-		Signal signal = this.getSensor("temperatureSensor").readSensor();
-		return signal;
+	private int readTempSensor() {
+		int currentTemperature = ((TemperatureSensor) this.getSensor("temperatureSensor")).readSensorValue();
+		return currentTemperature;
 	}
 	
 	

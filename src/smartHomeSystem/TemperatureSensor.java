@@ -21,4 +21,11 @@ public class TemperatureSensor extends Sensor {
 	    }
 	    return signal;
 	}
+	
+	//returns random temperature
+	public int readSensorValue() { 
+		Random random = new Random();
+		int currentTemperature = random.nextInt(40);
+		return currentTemperature;
+	}
 }

@@ -14,16 +14,17 @@ public class Thermostat extends Actuator{
 	}
 	public void decreaseTemperature() {
 		
-		
+		state.decreaseTemperature(this);
 	}
 
 	public void increaseTemperature() {
-		// TODO Auto-generated method stub
 		
+		state.increaseTemperature(this);
 	}
 	
 	public void closeThermostat() {
-		// TODO Auto-generated method stub
+		
+		state.closeThermostat(this);
 		
 	}
 

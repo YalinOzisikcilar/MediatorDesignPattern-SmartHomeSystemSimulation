@@ -5,7 +5,7 @@ import smartHomeSystem.DoorLock;
 public class DoorLockedState implements DoorState{
 
 	public DoorLockedState() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
@@ -22,7 +22,7 @@ public class DoorLockedState implements DoorState{
 
 	@Override
 	public String getDoorStateDescription() {
-		// TODO Auto-generated method stub
+
 		return "The door is locked.";
 	}
 

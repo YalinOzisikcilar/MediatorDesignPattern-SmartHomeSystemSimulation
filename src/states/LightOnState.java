@@ -18,12 +18,12 @@ public class LightOnState implements LightState {
 	}
 
 	public LightOnState() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	@Override
 	public String getLightStateDescription() {
-		// TODO Auto-generated method stub
+
 		return "The light is on.";
 	}
 

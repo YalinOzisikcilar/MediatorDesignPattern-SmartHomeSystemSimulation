@@ -5,8 +5,8 @@ import smartHomeSystem.SmartHomeSystem;
 public class ControlPanel implements IControlPanel {
 	SmartHomeSystem smartHomeSystem;
 	
-	public ControlPanel() {
-		// TODO Auto-generated constructor stub
+	public ControlPanel(SmartHomeSystem smartHomeSystem) {
+		this.smartHomeSystem = smartHomeSystem;
 	}
 	
 	@Override

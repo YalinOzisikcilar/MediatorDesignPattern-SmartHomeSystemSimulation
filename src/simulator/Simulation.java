@@ -2,21 +2,22 @@ package simulator;
 
 import java.util.Random;
 
+import controlPanel.ControlPanel;
 import controlPanel.IControlPanel;
-import smartHomeSystem.Signal;
 import smartHomeSystem.SmartHomeSystem;
 
 public class Simulation {
 	IControlPanel controlPanel;
 	SmartHomeSystem smartHomeSystem;
 	
-	public Simulation(IControlPanel controlPanel) {
-		this.controlPanel = controlPanel;
-		this.smartHomeSystem = new SmartHomeSystem(controlPanel);
+	Simulation(){
+		this.smartHomeSystem = new SmartHomeSystem();
+		this.controlPanel = new ControlPanel(smartHomeSystem);
 	}
 
 	//run for 20 seconds. Each loop should have 1 second interval
 	public void runSimulation() {
+
 		smartHomeSystem.setupSystem();
 		long startTime = System.currentTimeMillis();
 		while (System.currentTimeMillis() - startTime < 20000) {

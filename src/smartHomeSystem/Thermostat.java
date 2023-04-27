@@ -17,7 +17,7 @@ public class Thermostat extends Actuator{
 		
 	}
 
-	public void icreaseTemperature() {
+	public void increaseTemperature() {
 		// TODO Auto-generated method stub
 		
 	}

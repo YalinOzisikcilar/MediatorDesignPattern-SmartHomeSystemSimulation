@@ -7,10 +7,10 @@ import controlPanel.IControlPanel;
 public class SmartHomeSystem {
 	private HashMap<String, Sensor> sensors;
 	private HashMap<String, Actuator> actuators;
-	private IControlPanel controlPanel;
 
-	public SmartHomeSystem(IControlPanel controlPanel) {
-		this.controlPanel = controlPanel;
+
+	public SmartHomeSystem() {
+
 	}
 	
 	public String getSystemStateDescription() { //get all actuators state description
@@ -47,7 +47,7 @@ public class SmartHomeSystem {
 			thermostat.decreaseTemperature();
 		}
 		else if(temperatureSignal == Signal.LOW) {
-			thermostat.icreaseTemperature();
+			thermostat.increaseTemperature();
 		}
 		else {
 			thermostat.closeThermostat();

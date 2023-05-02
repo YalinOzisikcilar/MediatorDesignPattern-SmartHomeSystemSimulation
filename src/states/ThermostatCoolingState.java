@@ -29,9 +29,10 @@ public class ThermostatCoolingState implements ThermostatState{
 	}
 
 	@Override
-	public String getThermostatStateDescription() {
+	public String getThermostatStateDescription(int currentTemperature) {
 		// TODO Auto-generated method stub
-		return "Thermostat is cooling.";
+		return "Thermostat is cooling." + " Temperature measured as: " 
+			+ (currentTemperature + 1) + " Current temperature: " + currentTemperature;
 	}
 
 	@Override

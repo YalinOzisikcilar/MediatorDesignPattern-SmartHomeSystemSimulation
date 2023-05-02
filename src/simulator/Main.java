@@ -1,6 +1,5 @@
 package simulator;
 
-import controlPanel.IControlPanel;
 
 public class Main {
 

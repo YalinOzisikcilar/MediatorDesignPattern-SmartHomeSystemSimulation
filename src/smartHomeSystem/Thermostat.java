@@ -1,7 +1,6 @@
 package smartHomeSystem;
 
 import states.ThermostatClosedState;
-import states.ThermostatHeatingState;
 import states.ThermostatState;
 
 public class Thermostat extends Actuator{
@@ -37,7 +36,7 @@ public class Thermostat extends Actuator{
 
 	public String getStateDescription() {
 		
-		return state.getThermostatStateDescription()+" Current temperature is " + currentTemperature;
+		return state.getThermostatStateDescription(currentTemperature);
 	}
 	public void setState(ThermostatState thermostatState) {
 		

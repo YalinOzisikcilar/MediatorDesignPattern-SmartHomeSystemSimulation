@@ -28,9 +28,10 @@ public class ThermostatClosedState implements ThermostatState{
 	}
 
 	@Override
-	public String getThermostatStateDescription() {
+	public String getThermostatStateDescription(int currentTemperature) {
 
-		return "Thermostat is closed.";
+		return "Thermostat is closed." + " Temperature measured as: " 
+				+ currentTemperature + " Current temperature: " + currentTemperature;
 	}
 
 	@Override

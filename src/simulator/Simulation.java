@@ -1,6 +1,5 @@
 package simulator;
 
-import java.util.Random;
 
 import controlPanel.ControlPanel;
 import controlPanel.IControlPanel;
@@ -21,9 +20,9 @@ public class Simulation {
 		smartHomeSystem.setupSystem();
 		long startTime = System.currentTimeMillis();
 		while (System.currentTimeMillis() - startTime < 20000) {
-			smartHomeSystem.automateLight();
-			smartHomeSystem.automateDoorLock();
-			smartHomeSystem.automateTemperature();
+			
+			smartHomeSystem.readSensorsAndAutomateActuators();
+			controlPanel.randomCommand();
 			System.out.println(smartHomeSystem.getSystemStateDescription());
 		    try {
 		        Thread.sleep(1000); // Sleep for 1 second
@@ -34,11 +33,5 @@ public class Simulation {
 		
 		}
 	
-	private void runRandomCommand() {
-		Random random = new Random();
-		int randomInt = random.nextInt(5);
-		if(randomInt==0) {
-			
-		}
-	}
+	
 }

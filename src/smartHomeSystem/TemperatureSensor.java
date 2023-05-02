@@ -12,7 +12,7 @@ public class TemperatureSensor extends Sensor {
 	public Signal readSensor() {
 		Random random = new Random();
 		Signal signal = Signal.NEUTRAL;
-		int randomTemperature = random.nextInt(40);
+		int randomTemperature = random.nextInt(20) + 15;
 	    if( randomTemperature > 25) {
 	    	signal = Signal.HIGH;
 	    }
@@ -25,7 +25,7 @@ public class TemperatureSensor extends Sensor {
 	//returns random temperature
 	public int readSensorValue() { 
 		Random random = new Random();
-		int currentTemperature = random.nextInt(40);
+		int currentTemperature = random.nextInt(20) + 15;
 		return currentTemperature;
 	}
 }

@@ -1,6 +1,5 @@
 package smartHomeSystem;
 
-import states.LightOnState;
 import states.LightOffState;
 import states.LightState;
 

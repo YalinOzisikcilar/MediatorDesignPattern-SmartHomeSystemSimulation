@@ -18,8 +18,10 @@ public class SmartHomeSystem {
 		StringBuilder sb = new StringBuilder();
 		for (HashMap.Entry<String, Actuator> entry : actuators.entrySet()) {
 		    Actuator actuator = entry.getValue();
-		    sb.append(actuator.getStateDescription()).append("\n");
-		    
+		    sb.append(actuator.getStateDescription())
+		    	.append(actuator instanceof Thermostat ? " Goal temp is " + this.goalTemperature : "")
+		    	.append("\n");
+	       
 		}
 		String result = sb.toString();
 		return result;
@@ -58,6 +60,7 @@ public class SmartHomeSystem {
 	private int readTempSensor() {
 		int currentTemperature = ((TemperatureSensor) this.getSensor("temperatureSensor")).readSensorValue();
 		return currentTemperature;
+		
 	}
 	
 	
@@ -119,9 +122,9 @@ public class SmartHomeSystem {
 	}
 
 	public void setTemperature(int temperature) {
-		Thermostat thermostat = (Thermostat) this.getActuator("thermostat");
-		thermostat.setTemperature(temperature);
-		
+		//Thermostat thermostat = (Thermostat) this.getActuator("thermostat");
+		//thermostat.setTemperature(temperature);
+		this.goalTemperature = temperature;
 	}
 	
 	private Sensor getSensor(String sensorName) {
@@ -130,6 +133,12 @@ public class SmartHomeSystem {
 	private Actuator getActuator(String actuatorName) {
         return actuators.get(actuatorName);
     }
+
+	public void readSensorsAndAutomateActuators() {
+		this.automateDoorLock();
+		this.automateLight();
+		this.automateTemperature();
+	}
 }
 
 

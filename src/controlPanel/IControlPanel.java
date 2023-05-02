@@ -6,4 +6,5 @@ public interface IControlPanel {
 	void lockDoor();
 	void unlockDoor();
 	void setTemperature(int temperature);
+	void randomCommand();
 }

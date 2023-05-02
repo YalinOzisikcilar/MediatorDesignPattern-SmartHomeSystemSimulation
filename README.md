@@ -1,1 +1,1 @@
-# CENG431HW2
+Developing a Smart Home System simulation using Mediator Design Pattern.
